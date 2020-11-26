@@ -1,0 +1,14 @@
+<div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+        <div class="control">
+            <input type="text" name="title" id="title" formControlName="title" placeholder="Title">
+        </div>
+        <div class="control">
+            <input type="text" name="description" id="description" formControlName="description" placeholder="Description">
+        </div>
+        <div class="control">
+            <input type="date" name="date" id="date" formControlName="date" min="{{date | date:'yyyy-MM-dd'}}">
+        </div>
+        <button type="submit" [disabled]="!form.valid" class="button">{{buttonText}}</button>
+    </form>
+</div>

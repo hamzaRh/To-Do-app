@@ -1,0 +1,53 @@
+@import '../../../assets/sass/helpers/variables';
+
+.list-container {
+    width: 300px;
+
+    .serach-input {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .event-list {
+        .event {
+            border-radius: 8px;
+            padding: 20px 15px 10px;
+            margin-bottom: 20px;
+            background: #fff;
+            color: rgba(0,0,0,.87);
+            box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+
+            .info {
+                font-size: 16px;
+                margin-bottom: 5px;
+                
+                .info-data {
+                    color: $primaryColor;
+                }
+            }
+
+            .event-actions {
+                text-align: right;
+                margin-top: 20px;
+
+                .action {
+                    font-size: 16px;
+                    margin-left: 20px;
+                    cursor: pointer;
+
+                    &:hover {
+                        opacity: .8;
+                    }
+
+                    &.edit {
+                        color: #4F8A10;
+                    }
+
+                    &.delete {
+                        color: #D8000C;
+                    }
+                }
+            }
+        }
+    }
+}

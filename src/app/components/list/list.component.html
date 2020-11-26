@@ -1,0 +1,40 @@
+<div class="list-container">
+    <div *ngIf="!loading; else spinner">
+        <div *ngIf="list.length > 0; else noResult">
+
+            <input #searchInput name="searchText" [(ngModel)]="searchText" placeholder="Event title..."
+                class="serach-input">
+    
+    
+            <div *ngFor="let event of list | SearchPipe: searchText; let i=index" class="event-list">
+                <div class="event">
+                    <div class="event-infos">
+                        <div class="info">
+                            <span class="info-name">Title: </span>
+                            <span class="info-data">{{event?.title}}</span>
+                        </div>
+                        <div class="info">
+                            <span class="info-name">Description: </span>
+                            <span class="info-data">{{event?.description}}</span>
+                        </div>
+                        <div class="info">
+                            <span class="info-name">Due Date: </span>
+                            <span class="info-data">{{event?.date}}</span>
+                        </div>
+                    </div>
+                    <div class="event-actions">
+                        <span class="action edit" (click)="editEvent(event?.id)">Edit</span>
+                        <span class="action delete" (click)="deleteEvent(event?.id, i)">Delete</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #spinner>
+        <div class="spinner"><div></div><div></div><div></div><div></div></div>
+    </ng-template>     
+
+    <ng-template #noResult>
+        <div>There is no events to show.</div>
+    </ng-template>
+</div>

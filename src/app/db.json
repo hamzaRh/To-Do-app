@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "title": "test",
+      "description": "sdsd",
+      "date": "2020-11-28",
+      "id": 6
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
